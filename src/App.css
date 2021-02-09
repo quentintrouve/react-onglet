@@ -1,0 +1,44 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  cursor: none;
+  height: 100vh;
+  width: 100%;
+}
+.cursor-custom {
+  height: 40px;
+  width: 40px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+}
+.cursor-custom::before {
+  content: "";
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: crimson;
+}
+.expand {
+  animation: Anim 0.2s linear;
+}
+
+@keyframes Anim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
